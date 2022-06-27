@@ -1,0 +1,24 @@
+.navBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 1em;
+}
+.divLogo{
+    width: 200px
+}
+
+.imageLogo{
+    width: 100%;
+}
+
+.divMenu{
+    flex-grow: 1;
+    ul{display: flex;
+        justify-content: flex-start;
+        li{list-style: none;
+            padding: 0 1em;
+        }
+    }
+}
