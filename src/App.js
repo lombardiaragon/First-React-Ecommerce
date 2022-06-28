@@ -2,16 +2,19 @@ import './App.scss';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 function App() {
 
   const greeting='BIENVENIDOS'
   return (
-    <div>
+    <BrowserRouter>
       <NavBar/>
-      <ItemDetailContainer/> 
-      <ItemListContainer greeting={greeting}/>
-    </div>
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/detalle' element={<ItemDetailContainer/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

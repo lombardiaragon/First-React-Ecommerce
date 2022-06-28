@@ -6,12 +6,12 @@ import CheckroomIcon from '@mui/icons-material/Checkroom';
 import HelpIcon from '@mui/icons-material/Help';
 import MailIcon from '@mui/icons-material/Mail';
 import PersonIcon from '@mui/icons-material/Person';
-
+import { Link } from 'react-router-dom';
 const NavBar=()=>{
     return(
         <section className='NavBar'>
             <div className='divLogo'>
-                <img src='./logoFedeClaro.svg' alt='imageLogo' className='imageLogo'/>
+                <Link to={'/'}><img src='./logoFedeClaro.svg' alt='imageLogo' className='imageLogo'/></Link>
             </div>
             <div className='divMenu'>
                 <ul>
