@@ -1,0 +1,20 @@
+.divItemDetail{
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+    margin: 30px;
+    background-color: rgb(127, 206, 255);
+    border-radius: 3px;
+    .divItemDetail__image{
+        width: 65%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .divItemDetail__info{
+        text-align: center;
+    }
+}

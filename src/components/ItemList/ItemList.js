@@ -1,17 +1,17 @@
+import './ItemList.scss'
 import Item from "../Item/Item"
-import getProductsAsincrono from "../../services/products.services"
-import { useState } from "react"
 
-const ItemList=()=>{
-    const[products,setProducts]=useState([])
-    getProductsAsincrono()
-    .then((res)=>{
-        setProducts(res)
-    })
 
-    console.log('products',products)
+const ItemList=({products})=>{
+
     return(
-        <Item products={products}/>
+        <div className="divItemList">
+            {products.map((product)=> {
+               return(
+                <Item key={product.id} product={product}/>
+               ) })
+            }
+        </div>
     )
 }
 

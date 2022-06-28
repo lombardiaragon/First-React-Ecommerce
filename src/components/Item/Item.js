@@ -1,18 +1,16 @@
 import './Item.scss'
-const Item=({products})=>{
+import ItemCount from '../ItemCount/ItemCount'
+
+const Item=({product})=>{
+    const{title,price,id,pictureUrl}=product
 
     return(
-        <div>
-            {products.map(({id,title,pictureUrl})=>{
-                return(
-                    <div key={id} className="productItem">
-                        <h3>{title}</h3>
-                        <img src={`./${pictureUrl}`} alt='foto'/>
-                    </div>
-                )
-            })}
-        </div>
-       
+            <div key={id} className='productItem'>
+                <img src={`./${pictureUrl}`} alt='foto' className='productItem__img'/>
+                <h3>{title}</h3>
+                <span>${price}</span>
+                <ItemCount stock={6} initial={1}/>
+            </div>          
     )
 }
 

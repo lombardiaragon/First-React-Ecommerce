@@ -15,9 +15,12 @@ const ItemCount=({stock,initial})=>{
 
     return(
         <div>
-            <Button onClick={onDiscount} disabled={count==0}>-</Button>
-            <span>{count}</span>
-            <Button onClick={onAdd}>+</Button>
+            <div>
+                <Button onClick={onDiscount} disabled={count===0}>-</Button>
+                <span>{count}</span>
+                <Button onClick={onAdd}>+</Button>
+            </div>
+            <Button>Agregar al carrito</Button>
         </div>
     )
 }
