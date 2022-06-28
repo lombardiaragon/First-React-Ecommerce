@@ -12,7 +12,7 @@ import '../../App.scss'
 
 const NavBar=()=>{
     const [showCategorys,SetshowCategorys]=useState(false)
-    console.log('showCategorys',showCategorys)
+    // console.log('showCategorys',showCategorys)
 
     return(
         <section className='NavBar'>

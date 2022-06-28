@@ -1,30 +1,42 @@
 import { Button } from "@mui/material"
-import { useState } from "react"
-import {useContext} from 'react';
+import {useContext,useState} from 'react';
 import { CartContext } from '../../context/CartContext';
 
 
-const ItemCount=({stock,initial,product})=>{
-    const[count,setCount]=useState(initial)
-    const{addToCart}=useContext(CartContext)
+const ItemCount=({product})=>{
+    const{cartListItems,setCartListItems}=useContext(CartContext)
+    const{stock}=product
+
+    const[quantity,setQuantity]=useState(1)
+    
+    const addToCart=(itemToCart)=>{
+        // console.log('item con quantity',itemToCart)
+        let isInCart=cartListItems.some((cartItem)=>cartItem.id===itemToCart.id)
+        if(!isInCart){
+            setCartListItems([...cartListItems,itemToCart])
+        }
+    }
 
     const onAdd=()=>{
-        if(count<stock){
-            setCount(count+1)
+        if(quantity<stock){
+            setQuantity(quantity+1)
         } 
     }
 
     const onDiscount=()=>{
-        setCount(count-1)
+        setQuantity(quantity-1)
     }
+
+    product.quantitySelected=quantity
 
     return(
         <div>
             <div>
-                <Button onClick={onDiscount} disabled={count===0}>-</Button>
-                <span>{count}</span>
+                <Button onClick={onDiscount} disabled={quantity===1}>-</Button>
+                <span>{quantity}</span>
                 <Button onClick={onAdd}>+</Button>
             </div>
+            <span>Stock: {stock}</span>
             <Button onClick={()=>addToCart(product)}>Agregar al carrito</Button>
         </div>
     )

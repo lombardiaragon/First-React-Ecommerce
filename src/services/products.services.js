@@ -12,7 +12,7 @@ const getProducts = async() =>{
         // console.log("product: ", product)
         return product
     })
-     console.log("productList: ", productList)
+    //  console.log("productList: ", productList)
         
     return productList
 }

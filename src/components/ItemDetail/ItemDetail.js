@@ -12,7 +12,7 @@ const ItemDetail=({product})=>{
                 <h3>{title}</h3>
                 <span>${price}</span>
             </div>
-            <ItemCount/>
+            <ItemCount product={product}/>
 
         </div>
     )

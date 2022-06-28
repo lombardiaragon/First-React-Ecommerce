@@ -10,7 +10,7 @@ const Item=({product})=>{
                 <Link to={`/item/${id}`}><img src={`/${pictureUrl}`} alt='foto' className='productItem__img'/></Link>
                 <h3>{title}</h3>
                 <span>${price}</span>
-                <ItemCount stock={6} initial={1} product={product}/>
+                <ItemCount  product={product}/>
             </div>          
     )
 }

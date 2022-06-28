@@ -8,7 +8,6 @@ import { useParams } from 'react-router-dom'
 const ItemListContainer=()=>{
     const[products,setProducts]=useState([])
     const{category}=useParams()
-    console.log(useParams())
     
     useEffect(()=>{
         getProducts()
@@ -17,7 +16,7 @@ const ItemListContainer=()=>{
     })
     },[category])
 
-    console.log('productos filtrados',products)
+    // console.log('productos filtrados',products)
     return(
         <div className="divItemListContainer">   
             <ItemList products={products}/>

@@ -4,15 +4,10 @@ const CartContext=createContext()
 
 const CartProvider=({children})=>{
     const[cartListItems, setCartListItems]=useState([])
-    
-    const addToCart=(itemToCart)=>{
-        setCartListItems([...cartListItems,itemToCart])
-    }
-    console.log('cartListItems CartContext:',cartListItems)
 
     const data={
         cartListItems,
-        addToCart
+        setCartListItems       
     }
     return(
         <CartContext.Provider value={data}>
