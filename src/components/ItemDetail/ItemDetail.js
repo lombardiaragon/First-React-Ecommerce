@@ -1,4 +1,6 @@
+import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.scss'
+
 const ItemDetail=({product})=>{
     const{title,price,pictureUrl}=product
     return(
@@ -10,6 +12,7 @@ const ItemDetail=({product})=>{
                 <h3>{title}</h3>
                 <span>${price}</span>
             </div>
+            <ItemCount/>
 
         </div>
     )

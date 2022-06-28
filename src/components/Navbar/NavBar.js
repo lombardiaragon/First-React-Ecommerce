@@ -17,7 +17,7 @@ const NavBar=()=>{
     return(
         <section className='NavBar'>
             <div className='divLogo'>
-                <Link to={'/'} className='linkDecoration'><img src='./logoFedeClaro.svg' alt='imageLogo' className='imageLogo'/></Link>
+                <Link to={'/'} className='linkDecoration'><img src='/logoFedeClaro.svg' alt='imageLogo' className='imageLogo'/></Link>
             </div>
             <div className='divMenu'>
                 <ul>
