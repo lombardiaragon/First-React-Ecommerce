@@ -1,15 +1,22 @@
 import './ItemDetailContainer.scss'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useEffect,useState } from "react"
-import getProductsAsincrono from "../../services/products.services"
+import { getProduct } from "../../services/products.services"
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer=()=>{
+    const{id}=useParams()
+    // console.log('useParams',useParams())
     const[product,setProduct]=useState({})
-    useEffect(()=>{
-        getProductsAsincrono()
-        .then((res)=>{
-        setProduct(res.find((el)=>el.id===1))})
-    },[])
+    
+    useEffect( ()=>{
+        
+        getProduct(id)
+        .then( (prod) => {
+            // console.log("Respuesta getProduct: ", prod)
+            setProduct(prod)
+        })
+     },[id])
     
     return(
         <div className='divItemDetailContainer'>
