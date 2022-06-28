@@ -1,9 +1,16 @@
-.navBar{
+.NavBar{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: .5em 1em;
+    background-color: #343e9b;
+    box-sizing: border-box;
+    li{list-style: none;
+        padding: 0 1em;
+        display: flex;
+        span{margin-left: 6px;}
+    }
 }
 .divLogo{
     width: 200px
@@ -14,11 +21,28 @@
 }
 
 .divMenu{
-    flex-grow: 1;
+    flex-grow: 2;
     ul{display: flex;
         justify-content: flex-start;
-        li{list-style: none;
-            padding: 0 1em;
-        }
     }
 }
+
+.divCartLogin{
+    flex-grow: .2;
+    ul{
+       display: flex;
+       justify-content: space-around;
+    }
+}
+
+@media (max-width: 940px) {
+    .NavBar{
+        flex-direction: column;
+    }
+    .divLogo{
+        width: 50%
+    }
+    .divMenu{
+        flex-shrink: 1;
+    }
+}   
