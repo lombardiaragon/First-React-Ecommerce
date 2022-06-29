@@ -6,35 +6,41 @@ import '../components/Modal/Modal.scss'
 
 const Cart=()=>{
     const[showCartModal,setShowCartModal]=useState(false)
-    const{cartListItems}=useContext(CartContext)
+    const{cartListItems,quitFromCart}=useContext(CartContext)
 
     let mapPrices=cartListItems.map(item=>item.price*item.quantitySelected)
     let totalAcc=mapPrices.reduce((acc,prices)=>acc+prices,0)
-    
+
     return(
         <div>
             <h4>Carrito</h4>
-            {cartListItems.map((item)=>{
-                const{pictureUrl,title,id,price}=item
-                return(
-                    <div key={id} className='cartView'>
-                        <div className='cartView__divImg'>
-                            <img src={`./${pictureUrl}`} alt='ropa'/>
+            {cartListItems.length===0 ?
+            (<h3>NO HAY PRODUCTOS EN EL CARRITO</h3>)
+            :
+            (<div>
+                {cartListItems.map((item)=>{
+                    const{pictureUrl,title,id,price,quantitySelected}=item
+                    return(
+                        <div key={id} className='cartView'>
+                            <div className='cartView__divImg'>
+                                <img src={`./${pictureUrl}`} alt='ropa'/>
+                            </div>
+                            <h4>{title}</h4>
+                            <span>Precio Unitario: ${price}</span>
+                            <span>Cantidad: {quantitySelected}</span>
+                            <span>Precio Total: ${price*quantitySelected}</span>
+                            <button onClick={()=>quitFromCart(item)} className='deleteItem'>x</button>
                         </div>
-                        <h4>{title}</h4>
-                        <span>Precio Unitario: ${price}</span>
-                        <span>Cantidad</span>
-                        <span>Precio Total: ${price}</span>
-                        <button className='deleteItem'>x</button>
-                    </div>
-                )
-            })}
-            <div className="cartResume">
-                <p>Total</p>
-                <span>${totalAcc}</span>
-                <button onClick={()=>setShowCartModal(!showCartModal)}>COMPRAR</button>
-             </div>  
-           
+                    )
+                })}
+                <div className="cartResume">
+                    <p>Total</p>
+                    <span>${totalAcc}</span>
+                    <button onClick={()=>setShowCartModal(!showCartModal)}>COMPRAR</button>
+                </div>  
+            </div>)
+            }
+            
             {showCartModal &&
                 <Modal showCartModal={showCartModal} setShowCartModal={setShowCartModal}>
                     <div className='modalCart'>

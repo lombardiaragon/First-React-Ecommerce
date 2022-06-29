@@ -1,6 +1,7 @@
 import { Button } from "@mui/material"
 import {useContext,useState} from 'react';
 import { CartContext } from '../../context/CartContext';
+import './ItemCount.scss'
 
 
 const ItemCount=({product})=>{
@@ -30,7 +31,7 @@ const ItemCount=({product})=>{
     product.quantitySelected=quantity
 
     return(
-        <div>
+        <div  className="divItemCount">
             <div>
                 <Button onClick={onDiscount} disabled={quantity===1}>-</Button>
                 <span>{quantity}</span>

@@ -11,9 +11,8 @@ const ItemDetail=({product})=>{
             <div className='divItemDetail__info'>
                 <h3>{title}</h3>
                 <span>${price}</span>
+                <ItemCount product={product}/>
             </div>
-            <ItemCount product={product}/>
-
         </div>
     )
 }
