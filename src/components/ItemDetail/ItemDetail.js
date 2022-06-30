@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-// import './ItemDetail.scss'
-// import '../../App.scss'
 import '../../scss/index.scss'
 
 

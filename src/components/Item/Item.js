@@ -1,5 +1,3 @@
-// import './Item.scss'
-// import '../../App.scss'
 import '../../scss/index.scss'
 import { Link } from 'react-router-dom'
 

@@ -1,8 +1,6 @@
-import { Button } from "@mui/material"
 import {useContext,useState} from 'react';
 import { CartContext } from '../../context/CartContext';
-// import './ItemCount.scss'
-// import '../../App.scss'
+
 import '../../scss/index.scss'
 
 
@@ -28,9 +26,9 @@ const ItemCount=({product,hiddenItemCount})=>{
     return(
         <div  className="divItemCount">
             <div>
-                <Button onClick={onDiscount} disabled={quantity===1}>-</Button>
+                <button onClick={onDiscount} disabled={quantity===1}>-</button>
                 <span>{quantity}</span>
-                <Button onClick={onAdd}>+</Button>
+                <button onClick={onAdd}>+</button>
             </div>
             <span>Stock: {stock}</span>
             <button onClick={()=>{addToCart(product);hiddenItemCount()}} className='btnGlobal'>Agregar al carrito</button>

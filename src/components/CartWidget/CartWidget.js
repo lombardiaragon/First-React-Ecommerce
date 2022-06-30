@@ -1,6 +1,3 @@
-// import '../NavBar/NavBar.scss'
-// import './CartWidget.scss'
-// import '../../App.scss'
 import '../../scss/index.scss'
 import { useContext } from 'react';
 import {CartContext} from '../../context/CartContext'
