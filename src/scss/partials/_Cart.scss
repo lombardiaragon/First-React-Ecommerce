@@ -1,11 +1,11 @@
 .cartView{
     display: flex;
-    background-color: #56b4eb;
+    background-color: $celeste;
     align-items: center;
     justify-content: space-between;
     padding: 1em;
     position: relative;
-    border-bottom:1px solid #f1f1f1 ;
+    border-bottom:1px solid $blanco ;
 
     .cartView__divImg{
         width: 120px;
@@ -20,13 +20,13 @@
     .deleteItem{
         padding: 1em;
         border-radius: 3px;
-        background-color: #56b4eb;
-        color: #f1f1f1;
-        border: 1px solid #f1f1f1;
+        background-color: $celeste;
+        color: $blanco;
+        border: 1px solid $blanco;
         cursor: pointer;
         &:hover{
-            color: #56b4eb;
-            background-color: #f1f1f1;
+            color: $celeste;
+            background-color: $blanco;
         }
     }
 }
@@ -55,17 +55,17 @@
             height: 2.5em;
             width: 70%;
             padding: 1em;
-            border: 1px solid black;
+            border: 1px solid $azul;
             border-radius: 3px;
-            background-color: #f1f1f1;
-            color: #343e9b;
+            background-color: $blanco;
+            color: $azul;
             &:focus{
                 outline: none;
-                border: 2px solid #343e9b;
+                border: 2px solid $azul;
                 height: 2.8em;
             }
             &::placeholder{
-                color: #56b4eb;
+                color: $celeste;
             }
         }
         .btnSendForm{
@@ -76,7 +76,7 @@
 }
 
 .cartResume{
-    background-color: #56b4eb;
+    background-color: $celeste;
     position: relative;
     height: 200px;
     width: 300px;
@@ -89,7 +89,7 @@
     justify-content: space-evenly;
     font-size: 18px;
     font-weight: bold;
-    color: #161c4c;
+    color: $azul;
     padding: 2em 1.5em;
     box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.48);
 

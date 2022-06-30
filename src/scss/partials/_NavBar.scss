@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: space-between;
     padding: .5em 1em;
-    background-color: #343e9b;
-    color: #f1f1f1;
+    background-color: $azul;
+    color: $blanco;
     box-shadow:0px 2px 4px 3px rgba(0,0,0,0.72);
     margin-bottom: 6px;
     box-sizing: border-box;
@@ -15,7 +15,7 @@
         // position: relative;
         &:hover{
             cursor: pointer;
-            color: #efaf0dfe;
+            color: $naranja;
         }
         span{margin-left: 6px;}
     }
@@ -39,7 +39,7 @@
                     width: 90%;
                     top:2rem;
                     z-index: 50;
-                    background-color: #343e9b;
+                    background-color: $azul;
                     opacity: 97%;
                     padding: 10px;
                     border-radius: 3px;
@@ -47,11 +47,11 @@
                 
                     .subCategory{
                         display: block;
-                        color: #f1f1f1;
+                        color: $blanco;
                         padding: 6px;
-                        border-bottom: 1px solid #3c67c5;
+                        border-bottom: 1px solid $naranja;
                         &:hover{
-                            background-color: #3c67c5;
+                            background-color: $celeste;
                         }
                 
                     }

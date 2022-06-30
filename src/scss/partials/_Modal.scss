@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     .divModal{
-        background-color: #56b4eb;
+        background-color: $celeste;
         width: 500px;
         height: 550px;
         border-radius: 3px;
@@ -27,13 +27,13 @@
             padding: 1em;
             margin: .5em;
             border-radius: 3px;
-            background-color: #56b4eb;
-            color: #f1f1f1;
-            border: 1px solid #f1f1f1;
+            background-color: $celeste;
+            color: $blanco;
+            border: 1px solid $blanco;
             cursor: pointer;
             &:hover{
-                color: #56b4eb;
-                background-color: #f1f1f1;
+                color: $celeste;
+                background-color: $blanco;
             }
         }
     }

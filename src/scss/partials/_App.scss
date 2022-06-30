@@ -6,16 +6,16 @@
 }
 
 .btnGlobal{
-  color: #f1f1f1;
-  background-color: #343e9b;
+  color: $blanco;
+  background-color: $azul;
   padding: .5em 3em;
   border-radius: 3px;
   cursor: pointer;
-  border: 1px solid #343e9b;
+  border: 1px solid $azul;
   box-shadow:0px 0px 5px -2px #000000;
   font-size: 16px;
     &:hover{
-    background-color: #303a95;
+    background-color: $azul;
     box-shadow:0px 1px 8px -2px #000000;
     }
 }
@@ -27,18 +27,25 @@
   "main main main"
   "main main main"
   "footer footer footer";
-  grid-template-rows: 103px repeat(2,1fr) 100px; /*lo ideal es darle medidas fijas al header y al footer*/
+  grid-template-rows: 80px repeat(2,minmax(50vh,1fr)) 100px; 
 }
 .headerLayout{
   grid-area: header;
-  background-color: aqua;
+  background-color: $blanco;
 }
 .mainContent{
   grid-area: main;
-  background-color: #8dce58bd;
+  background-color: $blanco;
 }
 
 .footerLayout{
   grid-area: footer;
-  background-color: yellow;
+  background-color: $naranja;
+}
+
+@media screen and (max-width:940px) {
+  .mainContainer{
+    grid-template-rows: 137px repeat(2,minmax(50vh,1fr)) 100px; 
+
+  }
 }
