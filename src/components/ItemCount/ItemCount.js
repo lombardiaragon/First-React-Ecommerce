@@ -1,9 +1,6 @@
 import {useContext,useState} from 'react';
 import { CartContext } from '../../context/CartContext';
-
 import '../../scss/index.scss'
-
-
 
 const ItemCount=({product,hiddenItemCount})=>{
     const{addToCart}=useContext(CartContext)
@@ -25,10 +22,10 @@ const ItemCount=({product,hiddenItemCount})=>{
 
     return(
         <div  className="divItemCount">
-            <div>
-                <button onClick={onDiscount} disabled={quantity===1}>-</button>
+            <div className='divItemCount_counter'>
+                <button onClick={onDiscount} disabled={quantity===1} className='btnCounter'>-</button>
                 <span>{quantity}</span>
-                <button onClick={onAdd}>+</button>
+                <button onClick={onAdd}  className='btnCounter'>+</button>
             </div>
             <span>Stock: {stock}</span>
             <button onClick={()=>{addToCart(product);hiddenItemCount()}} className='btnGlobal'>Agregar al carrito</button>

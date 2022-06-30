@@ -1,4 +1,22 @@
 .divItemCount{
     display: flex;
     flex-direction: column;
+    .divItemCount_counter{
+        .btnCounter{
+            background-color: $blanco;
+            color: $azul;
+            width: 2em;
+            height: 2em;
+            padding-bottom: .3em;
+            border-radius: 3px;
+            font-size: larger;
+            margin: 0 .5em;
+            border: 1px solid $blanco;
+            cursor: pointer;
+            &:active{
+                background-color: $celeste;
+            }
+
+        }
+    }
 }
