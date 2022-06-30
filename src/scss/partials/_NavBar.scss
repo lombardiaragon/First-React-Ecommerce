@@ -1,0 +1,89 @@
+.NavBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 1em;
+    background-color: #343e9b;
+    color: #f1f1f1;
+    box-shadow:0px 2px 4px 3px rgba(0,0,0,0.72);
+    margin-bottom: 6px;
+    box-sizing: border-box;
+    li{list-style: none;
+        padding: 0 1em;
+        display: flex;
+        // position: relative;
+        &:hover{
+            cursor: pointer;
+            color: #efaf0dfe;
+        }
+        span{margin-left: 6px;}
+    }
+    .NavBar__divLogo{
+        max-width: 300px;
+    }
+    .NavBar__divMenu{
+        flex-grow: 2;
+        ul{display: flex;
+            justify-content: flex-start;
+            li{
+                position: relative;
+            }
+            .productos{
+                position: relative;
+                .listSubCategory{
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+                    width: 90%;
+                    top:2rem;
+                    z-index: 50;
+                    background-color: #343e9b;
+                    opacity: 97%;
+                    padding: 10px;
+                    border-radius: 3px;
+                    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.48);
+                
+                    .subCategory{
+                        display: block;
+                        color: #f1f1f1;
+                        padding: 6px;
+                        border-bottom: 1px solid #3c67c5;
+                        &:hover{
+                            background-color: #3c67c5;
+                        }
+                
+                    }
+                }
+            }
+        }
+    }
+    .NavBar__divCartLogin{
+        flex-grow: .2;
+        ul{
+           display: flex;
+           justify-content: space-around;
+            margin-top: 10px;
+        }
+    }
+}
+
+.imgLogo{
+    width: 95%;
+    height: 80%;
+    margin-top: .3em;
+    opacity: 50%;
+}
+
+@media (max-width: 940px) {
+    .NavBar{
+        flex-direction: column;
+    }
+    .divLogo{
+        width: 50%
+    }
+    .divMenu{
+        flex-shrink: 3;
+    }
+}   

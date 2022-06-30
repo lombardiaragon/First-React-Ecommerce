@@ -1,8 +1,11 @@
 import Modal from '../components/Modal/Modal'
 import {useContext,useState} from 'react';
 import { CartContext } from '../context/CartContext';
-import './Cart.scss'
-import '../components/Modal/Modal.scss'
+// import './Cart.scss'
+// import '../components/Modal/Modal.scss'
+// import '../App.scss'
+import '../scss/index.scss'
+
 
 const Cart=()=>{
     const[showCartModal,setShowCartModal]=useState(false)
@@ -36,7 +39,7 @@ const Cart=()=>{
                 <div className="cartResume">
                     <p>Total</p>
                     <span>${totalAcc}</span>
-                    <button onClick={()=>setShowCartModal(!showCartModal)}>COMPRAR</button>
+                    <button onClick={()=>setShowCartModal(!showCartModal)} className='btnGlobal btnBuy'>COMPRAR</button>
                 </div>  
             </div>)
             }
@@ -44,13 +47,14 @@ const Cart=()=>{
             {showCartModal &&
                 <Modal showCartModal={showCartModal} setShowCartModal={setShowCartModal}>
                     <div className='modalCart'>
-                        <img src='./shoppingOnline.svg' alt='shopping'/>
+                        <img src='./shopping.png' alt='shopping'/>
                         <form className='formCart'>
                             <h3>Formulario de confirmacíon de compra</h3>
                             <input placeholder='Nombre y Apellido'></input>
                             <input placeholder='Teléfono'></input>
                             <input placeholder='Dirección'></input>
                             <input placeholder='Email'></input>
+                            <button className='btnGlobal btnSendForm'>Enviar</button>
                         </form>
                     </div>
                 </Modal>

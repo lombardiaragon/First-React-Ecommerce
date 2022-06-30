@@ -1,5 +1,5 @@
-import './ItemList.scss'
 import Item from "../Item/Item"
+import '../../scss/index.scss'
 
 
 const ItemList=({products})=>{

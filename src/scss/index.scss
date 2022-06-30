@@ -3,6 +3,21 @@
   padding: 0;
   margin: 0;
 }
+
+@import "partials/vars";
+@import 'partials/App';
+@import 'partials/NavBar';
+@import 'partials/ItemListContainer';
+@import 'partials/ItemList';
+@import 'partials/Item';
+@import 'partials/Cart';
+@import 'partials/CartWidget';
+@import 'partials/Modal';
+@import 'partials/ItemDetailContainer';
+@import 'partials/ItemDetail';
+@import 'partials/ItemCount';
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,7 +25,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f1f1f1;
+  background-color: $blanco;
+  color:$azul;
 }
 
 code {

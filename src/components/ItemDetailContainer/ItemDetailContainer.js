@@ -1,8 +1,9 @@
-import './ItemDetailContainer.scss'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useEffect,useState } from "react"
 import { getProduct } from "../../services/products.services"
 import { useParams } from 'react-router-dom'
+import '../../scss/index.scss'
+
 
 const ItemDetailContainer=()=>{
     const{id}=useParams()

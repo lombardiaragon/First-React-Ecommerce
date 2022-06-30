@@ -35,12 +35,13 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2em;
-
-
+    gap: 1em;
+    text-align: center;
+    position: relative;
     img{
         width: 100%;
-        height: 50%;
+        height: 35%;
+        object-fit: contain;
     }
     .formCart{
         display: flex;
@@ -53,8 +54,44 @@
         input{
             height: 2.5em;
             width: 70%;
+            padding: 1em;
+            border: 1px solid black;
+            border-radius: 3px;
+            background-color: #f1f1f1;
+            color: #343e9b;
+            &:focus{
+                outline: none;
+                border: 2px solid #343e9b;
+                height: 2.8em;
+            }
+            &::placeholder{
+                color: #56b4eb;
+            }
         }
-       
+        .btnSendForm{
+            position: absolute;
+            bottom: 5%;
+        }
     }
 }
 
+.cartResume{
+    background-color: #56b4eb;
+    position: relative;
+    height: 200px;
+    width: 300px;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    font-weight: bold;
+    color: #161c4c;
+    padding: 2em 1.5em;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.48);
+
+
+}

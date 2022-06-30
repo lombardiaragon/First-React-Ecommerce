@@ -1,22 +1,17 @@
 import { Button } from "@mui/material"
 import {useContext,useState} from 'react';
 import { CartContext } from '../../context/CartContext';
-import './ItemCount.scss'
+// import './ItemCount.scss'
+// import '../../App.scss'
+import '../../scss/index.scss'
 
 
-const ItemCount=({product})=>{
-    const{cartListItems,setCartListItems}=useContext(CartContext)
+
+const ItemCount=({product,hiddenItemCount})=>{
+    const{addToCart}=useContext(CartContext)
     const{stock}=product
 
     const[quantity,setQuantity]=useState(1)
-    
-    const addToCart=(itemToCart)=>{
-        // console.log('item con quantity',itemToCart)
-        let isInCart=cartListItems.some((cartItem)=>cartItem.id===itemToCart.id)
-        if(!isInCart){
-            setCartListItems([...cartListItems,itemToCart])
-        }
-    }
 
     const onAdd=()=>{
         if(quantity<stock){
@@ -38,7 +33,7 @@ const ItemCount=({product})=>{
                 <Button onClick={onAdd}>+</Button>
             </div>
             <span>Stock: {stock}</span>
-            <Button onClick={()=>addToCart(product)}>Agregar al carrito</Button>
+            <button onClick={()=>{addToCart(product);hiddenItemCount()}} className='btnGlobal'>Agregar al carrito</button>
         </div>
     )
 }
