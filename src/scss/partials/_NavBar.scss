@@ -1,70 +1,118 @@
-.NavBar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5em 1em;
+.NavBarContainer{
     background-color: $azul;
-    color: $blanco;
-    box-shadow:0px 2px 4px 3px rgba(0,0,0,0.72);
-    margin-bottom: 6px;
-    box-sizing: border-box;
-    li{list-style: none;
-        padding: 0 1em;
+    padding: .5em 1em 1.5em 1em;
+    box-shadow:0px 0px 1px 3px rgba(0,0,0,0.72);
+    display: flex;
+    flex-direction: column;
+    .NavBar{
+        flex-shrink: 1;
         display: flex;
-        // position: relative;
-        &:hover{
-            cursor: pointer;
-            color: $naranja;
-        }
-        span{margin-left: 6px;}
-    }
-    .NavBar__divLogo{
-        max-width: 300px;
-    }
-    .NavBar__divMenu{
-        flex-grow: 2;
-        ul{display: flex;
-            justify-content: flex-start;
-            li{
-                position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: .5em 1em;  
+        color: $blanco;
+        box-shadow:0px 1px 4px 3px rgba(0,0,0,0.72);
+        margin-bottom: 6px;
+        box-sizing: border-box;
+        margin-bottom: 1em;
+        li{list-style: none;
+            padding: 0 1em;
+            display: flex;
+            // position: relative;
+            &:hover{
+                cursor: pointer;
+                color: $naranja;
             }
-            .productos{
-                position: relative;
-                .listSubCategory{
-                    position: absolute;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: stretch;
-                    width: 90%;
-                    top:2rem;
-                    z-index: 50;
-                    background-color: $azul;
-                    opacity: 97%;
-                    padding: 10px;
-                    border-radius: 3px;
-                    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.48);
-                
-                    .subCategory{
-                        display: block;
-                        color: $blanco;
-                        padding: 6px;
-                        border-bottom: 1px solid $naranja;
-                        &:hover{
-                            background-color: $celeste;
+            span{margin-left: 6px;}
+        }
+        .NavBar__divLogo{
+            max-width: 300px;
+        }
+        .NavBar__divMenu{
+            flex-shrink: 2;
+            flex-grow: 2;
+            ul{display: flex;
+                justify-content: flex-start;
+                li{
+                    position: relative;
+                }
+                .productos{
+                    position: relative;
+                    .listSubCategory{
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: stretch;
+                        width: 90%;
+                        top:2rem;
+                        z-index: 50;
+                        background-color: $azul;
+                        opacity: 97%;
+                        padding: 10px;
+                        border-radius: 3px;
+                        box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.48);
+                    
+                        .subCategory{
+                            display: block;
+                            color: $blanco;
+                            padding: 6px;
+                            border-bottom: 1px solid $naranja;
+                            &:hover{
+                                background-color: $azulHover;
+                            }
+                    
                         }
-                
                     }
                 }
             }
         }
+        .NavBar__divCartLogin{
+            flex-grow: .2;
+            ul{
+               display: flex;
+               justify-content: space-around;
+                margin-top: 3px;
+            }
+        }
     }
-    .NavBar__divCartLogin{
-        flex-grow: .2;
-        ul{
-           display: flex;
-           justify-content: space-around;
-            margin-top: 3px;
+    .divSearcher{
+        flex-shrink: 2;
+        .searcher{
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            border: 1px solid $naranja;
+            border-radius: 3px;
+            margin: auto;
+            width: fit-content;
+            
+            &:focus{
+                outline: none;
+            }
+
+            .searcherInput{
+                background-color: $blanco;
+                font-size: 15px;
+                border: none;
+                padding: 1em;
+                width: 50vw; 
+                height: 3em;
+                &:focus{
+                    outline: none;
+                    color: $azul;
+                }  
+                &::placeholder{
+                    color: $azul;
+                }
+
+            }
+            .searcherBtn{
+                padding: .6em;
+                border: none;
+                background-color: $blanco;
+
+            }
         }
     }
 }
@@ -74,7 +122,11 @@
     height: 80%;
     margin-top: .3em;
     opacity: 50%;
+    flex-shrink: 0;
+
 }
+
+
 
 @media (max-width: 940px) {
     .NavBar{

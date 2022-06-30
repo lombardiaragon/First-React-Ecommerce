@@ -12,14 +12,46 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
+            border-radius: 3px;
         }
     }
     .divItemDetail__info{
         text-align: center;
         display: flex;
         flex-direction: column;
-        h3,span{
+        gap: 1em;
+        width: 30%;
+        padding: 1em;
+
+        .formSizes,.formColors{
+            display: flex;
+            flex-direction: column;
+        }
+        .divTitlePrice{
+            display: grid; 
+            .titleItemDetail, .priceItemDetail{
+                padding: .5em;
+                font-size: 30px;
+            }
+            .priceItemDetail{
+                font-weight: bold;
+            }
+            .numberQuotes{
+                font-size: 20px;
+            }
+        }
+        .selectSizes, .selectColors{
             padding: .5em;
+            margin-top: .5em;
+            background-color: $blanco;
+            color: $azul;
+            border: 1px solid $azul;
+            border-radius: 3px;
+            &:focus{
+                outline: none;
+                border: 2px solid $azul;
+                height: 2.8em;
+            }
         }
     }
 }

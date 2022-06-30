@@ -1,8 +1,8 @@
-import ItemList from "../ItemList/ItemList"
+import ItemList from "./ItemList"
 import { useEffect,useState } from 'react'
-import getProducts from '../../services/products.services'
+import getProducts from '../services/products.services'
 import { useParams } from 'react-router-dom'
-import '../../scss/index.scss'
+import '../scss/index.scss'
 
 
 const ItemListContainer=()=>{

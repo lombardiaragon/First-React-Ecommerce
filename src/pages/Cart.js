@@ -1,4 +1,4 @@
-import Modal from '../components/Modal/Modal'
+import Modal from '../components/Modal'
 import {useContext,useState} from 'react';
 import { CartContext } from '../context/CartContext';
 import '../scss/index.scss'

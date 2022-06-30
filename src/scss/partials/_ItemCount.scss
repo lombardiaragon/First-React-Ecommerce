@@ -1,6 +1,8 @@
 .divItemCount{
     display: flex;
     flex-direction: column;
+    gap: 1.5em;
+    margin-top: .5em;
     .divItemCount_counter{
         .btnCounter{
             background-color: $blanco;

@@ -1,4 +1,4 @@
-import '../../scss/index.scss'
+import '../scss/index.scss'
 
 
 const Modal=({showCartModal,setShowCartModal,children})=>{

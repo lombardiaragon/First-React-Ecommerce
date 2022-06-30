@@ -27,7 +27,7 @@
   "main main main"
   "main main main"
   "footer footer footer";
-  grid-template-rows: 80px repeat(2,minmax(50vh,1fr)) 100px; 
+  grid-template-rows: 224px repeat(2,minmax(50vh,1fr)) 100px; 
 }
 .headerLayout{
   grid-area: header;
@@ -43,9 +43,9 @@
   background-color: $naranja;
 }
 
-@media screen and (max-width:940px) {
+@media screen and (max-width:1015px) {
   .mainContainer{
-    grid-template-rows: 137px repeat(2,minmax(50vh,1fr)) 100px; 
+    grid-template-rows: 250px repeat(2,minmax(50vh,1fr)) 100px; 
 
   }
 }

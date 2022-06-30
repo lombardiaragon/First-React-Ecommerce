@@ -1,6 +1,6 @@
 import {useContext,useState} from 'react';
-import { CartContext } from '../../context/CartContext';
-import '../../scss/index.scss'
+import {CartContext} from '../context/CartContext'
+import '../scss/index.scss'
 
 const ItemCount=({product,hiddenItemCount})=>{
     const{addToCart}=useContext(CartContext)

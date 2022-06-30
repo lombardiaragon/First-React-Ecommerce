@@ -1,4 +1,4 @@
-import '../../scss/index.scss'
+import '../scss/index.scss'
 import { Link } from 'react-router-dom'
 
 const Item=({product})=>{
