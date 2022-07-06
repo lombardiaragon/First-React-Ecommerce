@@ -7,7 +7,7 @@ Dicho comando instalará los los módulos necesarios y se creará la carpeta: *n
 
 # EcommerceFede.md
 ![](/public/logoOscuroVerticalFede.png)
-![](/public/animation.gif)
+
 
 
 #### Introducción
@@ -37,3 +37,4 @@ Carpetas:
 	- utils: archivo *firebaseConfig.js* para la configuración básica de *firebase*.
 
 
+![](/public/animation.gif)
