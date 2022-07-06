@@ -6,6 +6,8 @@ Instalar Node Js y una vez clonado el repositorio debes ejecutar el comando:
 Dicho comando instalará los los módulos necesarios y se creará la carpeta: *node_modules*
 
 # EcommerceFede.md
+![](/public/logoOscuroVerticalFede.png)
+
 #### Introducción
 El proyecto es el resultado final del curso de React js en Coderhouse.
 El mismo consiste en el desarrollo de un Ecommerce usando React js.
@@ -33,4 +35,3 @@ Carpetas:
 	- utils: archivo *firebaseConfig.js* para la configuración básica de *firebase*.
 
 
-![](/public/logoOscuroVerticalFede.png)
