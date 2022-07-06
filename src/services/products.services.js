@@ -5,14 +5,11 @@ const getProducts = async() =>{
     const itemsCollection=collection(db, "productos")
     const productsSnapshot = await getDocs(itemsCollection);
     
-    // console.log('productsSnapshot',productsSnapshot)
     const productList = productsSnapshot.docs.map((doc) => {
         let product = doc.data()
         product.id = doc.id
-        // console.log("product: ", product)
         return product
     })
-    //  console.log("productList: ", productList)
         
     return productList
 }

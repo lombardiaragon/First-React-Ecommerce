@@ -19,26 +19,26 @@ function App() {
 
   return (
     <SearcherProvider>
-    <CartProvider>
-      <MainContainerLayout>
-        <BrowserRouter>
-          <HeaderLayout>
-            <NavBar/>
-          </HeaderLayout>
-          <MainContentLayout>
-            <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/productos/:category' element={<ItemListContainer/>}/>
-              <Route path='/item/:id' element={<Detail/>}/>
-              <Route path='/carrito' element={<Cart/>}/>
-              <Route path='/contacto' element={<Contact/>}/>
-              <Route path='*' element={<NotFound/>}/> 
-            </Routes>
-          </MainContentLayout>
-          <FooterLayout/>
-        </BrowserRouter>
-      </MainContainerLayout>
-    </CartProvider>
+      <CartProvider>
+        <MainContainerLayout>
+          <BrowserRouter>
+            <HeaderLayout>
+              <NavBar/>
+            </HeaderLayout>
+            <MainContentLayout>
+              <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/productos/:category' element={<ItemListContainer/>}/>
+                <Route path='/item/:id' element={<Detail/>}/>
+                <Route path='/carrito' element={<Cart/>}/>
+                <Route path='/contacto' element={<Contact/>}/>
+                <Route path='*' element={<NotFound/>}/> 
+              </Routes>
+            </MainContentLayout>
+            <FooterLayout/>
+          </BrowserRouter>
+        </MainContainerLayout>
+      </CartProvider>
     </SearcherProvider>
   )
 }
