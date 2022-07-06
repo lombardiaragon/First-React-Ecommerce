@@ -1,7 +1,13 @@
 import ItemListContainer from '../components/ItemListContainer'
+import Banner from '../components/Banner'
+
 const Home=()=>{
     return(
-        <ItemListContainer/>
+        <>
+            <Banner/>
+            <ItemListContainer/>
+        </>
+
     )
 }
 

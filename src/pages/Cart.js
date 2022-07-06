@@ -2,14 +2,66 @@ import Modal from '../components/Modal'
 import {useContext,useState} from 'react';
 import { CartContext } from '../context/CartContext';
 import '../scss/index.scss'
+import {collection,addDoc} from "firebase/firestore";
+import db from '../utils/firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 
 
 const Cart=()=>{
     const[showCartModal,setShowCartModal]=useState(false)
-    const{cartListItems,quitFromCart}=useContext(CartContext)
+    const{cartListItems,setCartListItems,quitFromCart}=useContext(CartContext)
 
     let mapPrices=cartListItems.map(item=>item.price*item.quantitySelected)
     let totalAcc=mapPrices.reduce((acc,prices)=>acc+prices,0)
+
+    
+    const [formValue, setFormValue] = useState({
+        name: '',
+        phone: '',
+        direction: '',
+        email: ''
+    })
+    const [order, setOrder] = useState({
+        buyer: {},
+        items: cartListItems.map( item => {
+            return {
+                id: item.id,
+                title: item.title,
+                price: item.price,
+                quantitySelected: item.quantitySelected
+            }
+        } ),
+        total: totalAcc
+    })
+
+
+    const [success, setSuccess] = useState()
+    const navigate = useNavigate()
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setOrder({...order, buyer: formValue})
+        sendOrder({...order, buyer: formValue})
+        setCartListItems([])
+    }
+
+    const handleChange = (e) => {
+        setFormValue({...formValue, [e.target.name]: e.target.value})
+    }
+
+    const finishOrder = () => {
+        navigate('/')
+    }
+
+    const sendOrder = async (newOrder) => {
+        const ordersCollectionFirebase = collection(db, 'ordenes')
+        const orderDoc = await addDoc(ordersCollectionFirebase, newOrder)
+        // console.log(orderDoc)
+        console.log("orden generada: ", orderDoc.id)
+        setSuccess(orderDoc.id)
+        // console.log('order',order)
+    }
 
     return(
         <div>
@@ -43,17 +95,54 @@ const Cart=()=>{
             
             {showCartModal &&
                 <Modal showCartModal={showCartModal} setShowCartModal={setShowCartModal}>
-                    <div className='modalCart'>
+                    { success ?
+                    ( <div className='modalCart buyingConfirmation'>
                         <img src='./shopping.png' alt='shopping'/>
-                        <form className='formCart'>
-                            <h3>Formulario de confirmacíon de compra</h3>
-                            <input placeholder='Nombre y Apellido'></input>
-                            <input placeholder='Teléfono'></input>
-                            <input placeholder='Dirección'></input>
-                            <input placeholder='Email'></input>
-                            <button className='btnGlobal btnSendForm'>Enviar</button>
-                        </form>
+                        <h3>Formulario de confirmacíon de compra</h3>
+                        Orden generada!
+                        Numero de orden: {success}
+                        <div>
+                            <button onClick={finishOrder} className='btnGlobal btnSendForm'>Aceptar</button>
+                        </div>
                     </div>
+                    )
+                    :
+                    (<div className='modalCart'>
+                        <img src='./shopping.png' alt='shopping'/>
+                        <form className='formCart' onSubmit={handleSubmit}>
+                            <h3>Formulario de confirmacíon de compra</h3>
+                            <input 
+                            placeholder='Nombre y Apellido'
+                            name='name'
+                            value={formValue.name} 
+                            onChange={handleChange}
+                            required
+                            />
+                            <input
+                            placeholder='Teléfono' 
+                            name='phone'
+                            value={formValue.phone} 
+                            onChange={handleChange}
+                            required
+                            />
+                            <input
+                            placeholder='Dirección'
+                            name='direction'
+                            value={formValue.direction} 
+                            onChange={handleChange}
+                            required
+                            />
+                            <input
+                            placeholder='Email' 
+                            name='email'
+                            value={formValue.email} 
+                            onChange={handleChange}
+                            required
+                            />
+                            <button type='submit' className='btnGlobal btnSendForm'>Enviar</button>
+                        </form>
+                    </div>)
+                    }
                 </Modal>
             }
         </div>

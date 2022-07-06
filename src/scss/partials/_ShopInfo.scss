@@ -1,0 +1,26 @@
+.divShopInfo{
+    width: 90%;
+    height: 10vh;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: $naranja;
+    display: flex;
+    align-items: center;
+    .divShopInfo__list{
+        width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 1em;
+        li{
+            display: flex;
+            span{
+                padding-left: 10px;
+            }
+        }
+    }
+}

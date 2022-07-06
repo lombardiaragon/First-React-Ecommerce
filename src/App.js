@@ -12,11 +12,14 @@ import MainContainerLayout from './Layout/MainContainer.layout';
 import HeaderLayout from './Layout/Header.layout';
 import MainContentLayout from './Layout/MainContent.layout';
 import FooterLayout from './Layout/Footer.layout';
+import SearcherProvider from './context/SearcherContext';
+
 
 
 function App() {
 
   return (
+    <SearcherProvider>
     <CartProvider>
       <MainContainerLayout>
         <BrowserRouter>
@@ -37,6 +40,7 @@ function App() {
         </BrowserRouter>
       </MainContainerLayout>
     </CartProvider>
+    </SearcherProvider>
   )
 }
 

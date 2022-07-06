@@ -1,0 +1,10 @@
+.divBanner{
+    width: 90w;
+    height: 40vh;
+    .divBanner__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 80%;
+    }
+}

@@ -10,12 +10,25 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { SearcherContext } from '../context/SearcherContext';
+import { useContext } from 'react';
 
 const NavBar=()=>{
+    const{setSearchProduct}=useContext(SearcherContext)
     const [showCategorys,SetshowCategorys]=useState(false)
     // console.log('showCategorys',showCategorys)
     const[showCartWidget,setShowCartWidget]=useState(false)
-    console.log('showCartWidget',showCartWidget)
+    const[formValue,setFormValue]=useState('')
+
+    const handleChange=(e)=>{
+        setFormValue(e.target.value)
+    }
+
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        setSearchProduct(formValue)
+    }
+
     return(
         <section className='NavBarContainer'>
             <div className='NavBar'>
@@ -48,9 +61,15 @@ const NavBar=()=>{
                 </div>
             </div>
             <div className='divSearcher'>
-                <form className='searcher'>
-                    <input className="searcherInput" type="search" placeholder="¿Qué estás buscando?" aria-label="Search"/>
-                    <button className="searcherBtn" type="button" id="buscar"><SearchIcon/></button>
+                <form className='searcher' onSubmit={handleSubmit}>
+                    <input className="searcherInput"
+                    type="text" 
+                    value={formValue}
+                    placeholder="¿Qué estás buscando?" 
+                    aria-label="Search"
+                    onChange={handleChange}
+                   />
+                    <button className="searcherBtn" type='submit' id="buscar"><SearchIcon/></button>
                 </form>
             </div>
             {showCartWidget && <CartWidget showCartWidget={showCartWidget} setShowCartWidget={setShowCartWidget}/>  }
