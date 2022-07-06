@@ -7,6 +7,8 @@ Dicho comando instalará los los módulos necesarios y se creará la carpeta: *n
 
 # EcommerceFede.md
 ![](/public/logoOscuroVerticalFede.png)
+![](/public/animation.gif)
+
 
 #### Introducción
 El proyecto es el resultado final del curso de React js en Coderhouse.
