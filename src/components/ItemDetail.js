@@ -10,7 +10,6 @@ const ItemDetail=({product})=>{
 
     const hiddenItemCount=()=>{
         setShowItemCount(!showItemCount)
-        console.log('hidden',showItemCount)
     }
 
 

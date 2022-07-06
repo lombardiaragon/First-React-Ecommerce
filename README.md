@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+##  Bienvenido al repositorio de mi proyecto de Ecommerce
+**Instalación**
+Instalar Node Js y una vez clonado el repositorio debes ejecutar el comando:
+*npm install*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dicho comando instalará los los módulos necesarios y se creará la carpeta: *node_modules*
 
-## Available Scripts
+# EcommerceFede.md
+#### Introducción
+El proyecto es el resultado final del curso de React js en Coderhouse.
+El mismo consiste en el desarrollo de un Ecommerce usando React js.
 
-In the project directory, you can run:
+#### Desarrollo
+Se utiliza *create-react-app* para el desarrollo de la aplicación.
 
-### `npm start`
+Para el ruteo se utiliza *react-router-dom*.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Los estilos se implementan utilizando *sass*.
+Se utiliza la dependencia  *@mui/icons-material* para los iconos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+El backend se realiza con *firebase*.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Contenido
+Carpetas:
+- public: contiene imágenes y contenido multimedia.
+- src:
+	- components: componentes específicos de la app.
+	- context: contiene los componentes de contextos para el carrito y el buscador.
+	- Layout: componentes generales de Layout.
+	- pages: páginas de ruteo.
+	- scss: archivo *index.scss *principal y subcarpeta con los *partials*.
+	- services: archivo *products.services.js* dentro del cual se hacen los llamados a la base de datos de *firestore*.
+	- utils: archivo *firebaseConfig.js* para la configuración básica de *firebase*.

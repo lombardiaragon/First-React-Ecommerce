@@ -9,19 +9,17 @@ import { useNavigate } from 'react-router-dom';
 
 const Cart=()=>{
     const[showCartModal,setShowCartModal]=useState(false)
-    const{cartListItems,setCartListItems,quitFromCart}=useContext(CartContext)
+    const{totalAcc,cartListItems,setCartListItems,quitFromCart}=useContext(CartContext)
 
-    let mapPrices=cartListItems.map(item=>item.price*item.quantitySelected)
-    let totalAcc=mapPrices.reduce((acc,prices)=>acc+prices,0)
-
-    
     const [formValue, setFormValue] = useState({
-        name: '',
+        user: '',
         phone: '',
         direction: '',
-        email: ''
+        email: '',
+        validEmail:''
     })
     const [order, setOrder] = useState({
+        date: new Date(),
         buyer: {},
         items: cartListItems.map( item => {
             return {
@@ -34,16 +32,15 @@ const Cart=()=>{
         total: totalAcc
     })
 
-
     const [success, setSuccess] = useState()
     const navigate = useNavigate()
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setOrder({...order, buyer: formValue})
-        sendOrder({...order, buyer: formValue})
-        setCartListItems([])
+            setOrder({...order, buyer: formValue})
+            sendOrder({...order, buyer: formValue})
+            setCartListItems([])
     }
 
     const handleChange = (e) => {
@@ -57,10 +54,8 @@ const Cart=()=>{
     const sendOrder = async (newOrder) => {
         const ordersCollectionFirebase = collection(db, 'ordenes')
         const orderDoc = await addDoc(ordersCollectionFirebase, newOrder)
-        // console.log(orderDoc)
         console.log("orden generada: ", orderDoc.id)
         setSuccess(orderDoc.id)
-        // console.log('order',order)
     }
 
     return(
@@ -113,7 +108,7 @@ const Cart=()=>{
                             <h3>Formulario de confirmacíon de compra</h3>
                             <input 
                             placeholder='Nombre y Apellido'
-                            name='name'
+                            name='user'
                             value={formValue.name} 
                             onChange={handleChange}
                             required
@@ -138,8 +133,17 @@ const Cart=()=>{
                             value={formValue.email} 
                             onChange={handleChange}
                             required
+                            pattern={`${formValue.validEmail}`}
                             />
-                            <button type='submit' className='btnGlobal btnSendForm'>Enviar</button>
+                            <input
+                            placeholder='Validar Email' 
+                            name='validEmail'
+                            value={formValue.validEmail} 
+                            onChange={handleChange}
+                            required
+                            pattern={`${formValue.email}`}
+                            />
+                            <button type='submit' className='btnGlobal btnSendForm'>Realizar compra</button>
                         </form>
                     </div>)
                     }

@@ -20,6 +20,8 @@ const NavBar=()=>{
     const[showCartWidget,setShowCartWidget]=useState(false)
     const[formValue,setFormValue]=useState('')
 
+    
+
     const handleChange=(e)=>{
         setFormValue(e.target.value)
     }
@@ -27,6 +29,7 @@ const NavBar=()=>{
     const handleSubmit=(e)=>{
         e.preventDefault()
         setSearchProduct(formValue)
+        setFormValue('')
     }
 
     return(

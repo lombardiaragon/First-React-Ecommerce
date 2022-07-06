@@ -15,7 +15,6 @@ import FooterLayout from './Layout/Footer.layout';
 import SearcherProvider from './context/SearcherContext';
 
 
-
 function App() {
 
   return (

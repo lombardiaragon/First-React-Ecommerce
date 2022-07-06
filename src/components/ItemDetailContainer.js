@@ -7,21 +7,27 @@ import '../scss/index.scss'
 
 const ItemDetailContainer=()=>{
     const{id}=useParams()
-    // console.log('useParams',useParams())
+ 
     const[product,setProduct]=useState({})
-    
+  
     useEffect( ()=>{
-        
         getProduct(id)
         .then( (prod) => {
-            // console.log("Respuesta getProduct: ", prod)
-            setProduct(prod)
+            if(prod!=='error!'){
+                setProduct(prod)
+            }
         })
      },[id])
-    
+
+
     return(
         <div className='divItemDetailContainer'>
-            <ItemDetail product={product}/>
+            {Object.keys(product).length===0 ?
+             <h1>NO EXISTE EL PRODUCTO</h1>
+             :
+             <ItemDetail product={product}/>
+               
+            }
         </div>
     )
 }

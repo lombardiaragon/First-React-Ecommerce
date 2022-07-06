@@ -4,8 +4,8 @@ import {CartContext} from '../context/CartContext'
 import { Link } from 'react-router-dom';
 
 const CartWidget=({showCartWidget,setShowCartWidget})=>{
-    const {cartListItems,quitFromCart}=useContext(CartContext)
-    console.log(showCartWidget)
+    const {totalAcc,cartListItems,quitFromCart}=useContext(CartContext)
+
     return(
         <div>
             {showCartWidget &&
@@ -34,7 +34,7 @@ const CartWidget=({showCartWidget,setShowCartWidget})=>{
                                 )
                              })}
                                 <div className='CWtotalResume'>
-                                    <p>Total: $...........</p>
+                                    <p>Total: ${totalAcc}</p>
                                 </div>
                                 <div >
                                     <Link to={'/carrito'}>

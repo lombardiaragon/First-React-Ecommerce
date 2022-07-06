@@ -21,11 +21,11 @@ const ItemListContainer=()=>{
 
      let filterSearcher=products.filter(el=>el.category.includes(searchProduct) ||  el.description.includes(searchProduct))
 
-     console.log('productos filtrados',products)
+    //  console.log('searchProduct',searchProduct)
     return(
 
         <div className="divItemListContainer">
-            {searchProduct?
+            {searchProduct? 
             <ItemList products={filterSearcher}/>
             :
             <ItemList products={products}/>

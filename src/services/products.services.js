@@ -17,15 +17,21 @@ const getProducts = async() =>{
     return productList
 }
 
+const error='error!'
 const getProduct=async(id)=>{
     const docRef= doc(db,'productos',id)
     const docSnapshot=await getDoc(docRef)
-    //  console.log('docSnapshot',docSnapshot.data())
-    let product = docSnapshot.data()
-    product.id = docSnapshot.id
-    // console.log('product',product)
-    return product
+    if(docSnapshot.data()){
+        let product = docSnapshot.data()
+        product.id = docSnapshot.id
+        return product
+    }
+    else {
+        return error
+    }
 }
+
+
 
 export default getProducts
 export {getProduct}
