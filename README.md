@@ -31,3 +31,6 @@ Carpetas:
 	- scss: archivo *index.scss *principal y subcarpeta con los *partials*.
 	- services: archivo *products.services.js* dentro del cual se hacen los llamados a la base de datos de *firestore*.
 	- utils: archivo *firebaseConfig.js* para la configuración básica de *firebase*.
+
+
+![](/public/logoOscuroVerticalFede.png)
