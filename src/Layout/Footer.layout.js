@@ -1,7 +1,11 @@
+import '../scss/index.scss'
 const FooterLayout=()=>{
     return(
         <footer className="footerLayout">
-           <h3>FOOTER</h3>
+           <div className="divFooter">
+               <img src="./logoOscuroFedeHorizontal.png" alt="logoFooter"/>
+           </div>
+
         </footer>
     )
 }

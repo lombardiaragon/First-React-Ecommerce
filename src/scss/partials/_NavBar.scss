@@ -33,7 +33,6 @@
             flex-shrink: 2;
             flex-grow: 2;
             ul{display: flex;
-                justify-content: flex-start;
                 li{
                     position: relative;
                 }
@@ -138,5 +137,9 @@
     }
     .divMenu{
         flex-shrink: 3;
+    }
+    .NavBar__divMenu{
+        ul{justify-content: space-around;
+        }
     }
 }   
