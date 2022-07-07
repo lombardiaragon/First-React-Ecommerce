@@ -16,7 +16,7 @@ import { useContext } from 'react';
 const NavBar=()=>{
     const{setSearchProduct}=useContext(SearcherContext)
     const [showCategorys,SetshowCategorys]=useState(false)
-    // console.log('showCategorys',showCategorys)
+
     const[showCartWidget,setShowCartWidget]=useState(false)
     const[formValue,setFormValue]=useState('')
 

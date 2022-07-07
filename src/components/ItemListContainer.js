@@ -21,7 +21,6 @@ const ItemListContainer=()=>{
 
      let filterSearcher=products.filter(el=>el.category.includes(searchProduct) ||  el.description.includes(searchProduct))
 
-    //  console.log('searchProduct',searchProduct)
     return(
 
         <div className="divItemListContainer">

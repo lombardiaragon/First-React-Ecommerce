@@ -9,7 +9,6 @@ const SearcherProvider=({children})=>{
         searchProduct,
         setSearchProduct
     }
-    // console.log('desdeContext',searchProduct)
 
     return(
         <SearcherContext.Provider value={data}>
