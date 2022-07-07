@@ -127,19 +127,22 @@
 
 
 
-@media (max-width: 940px) {
+@media (max-width: 1040px) {
+.NavBarContainer{
     .NavBar{
         flex-direction: column;
       justify-content: center;
+      .NavBar__divMenu{
+          ul{justify-content: space-around;
+          }
+      }
     }
+
+}
     .divLogo{
         width: 50%
     }
     .divMenu{
         flex-shrink: 3;
-    }
-    .NavBar__divMenu{
-        ul{justify-content: space-around;
-        }
     }
 }   
