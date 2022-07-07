@@ -60,7 +60,7 @@ const Cart=()=>{
 
     return(
         <div>
-            <h4>Carrito</h4>
+            <h4 className='titleCart'>MI CARRITO</h4>
             {cartListItems.length===0 ?
             (<h3>NO HAY PRODUCTOS EN EL CARRITO</h3>)
             :
