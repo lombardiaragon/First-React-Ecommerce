@@ -8,8 +8,8 @@
         flex-shrink: 1;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
         padding: .5em 1em;  
         color: $blanco;
         box-shadow:0px 1px 4px 3px rgba(0,0,0,0.72);
@@ -118,7 +118,7 @@
 }
 
 .imgLogo{
-    width: 95%;
+    width: 300px;
     height: 80%;
     margin-top: .3em;
     opacity: 50%;
@@ -131,6 +131,7 @@
 @media (max-width: 940px) {
     .NavBar{
         flex-direction: column;
+      justify-content: center;
     }
     .divLogo{
         width: 50%

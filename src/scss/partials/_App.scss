@@ -49,3 +49,10 @@
 
   }
 }
+
+@media (max-width: 940px){
+  .mainContainer{
+    grid-template-rows: 300px repeat(2,minmax(50vh,1fr)) 100px; 
+
+  }
+}

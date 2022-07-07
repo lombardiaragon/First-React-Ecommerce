@@ -28,7 +28,6 @@
             flex-direction: column;
         }
         .divTitlePrice{
-            display: grid; 
             .titleItemDetail, .priceItemDetail{
                 padding: .5em;
                 font-size: 30px;
@@ -54,4 +53,23 @@
             }
         }
     }
+}
+
+@media screen and (max-width:1071px) {
+    
+    .divItemDetail{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        .divItemDetail__image{
+            width:100%;
+            flex-shrink: 1;
+        }
+        .divItemDetail__info{
+            width: 100%;
+            gap:.5em;
+        }
+    }
+    
 }
