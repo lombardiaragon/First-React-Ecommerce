@@ -37,4 +37,10 @@ Carpetas:
 	- utils: archivo *firebaseConfig.js* para la configuración básica de *firebase*.
 
 
+
+
+
+
+
+
 ![](/public/animation.gif)
