@@ -73,10 +73,12 @@ const Cart=()=>{
                                 <img src={`./${pictureUrl}`} alt='ropa'/>
                             </div>
                             <h4>{title}</h4>
-                            <span>Precio Unitario: ${price}</span>
-                            <span>Cantidad: {quantitySelected}</span>
-                            <span>Precio Total: ${price*quantitySelected}</span>
-                            <button onClick={()=>quitFromCart(item)} className='deleteItem'>x</button>
+                            <div className='cartView__divInfo'>
+                                <span>Precio Unitario: ${price}</span>
+                                <span>Cantidad: {quantitySelected}</span>
+                                <span>Precio Total: ${price*quantitySelected}</span>
+                                <button onClick={()=>quitFromCart(item)} className='deleteItem'>x</button>
+                            </div>
                         </div>
                     )
                 })}
